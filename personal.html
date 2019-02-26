@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>个人主页-徐天家</title>
+</head>
+<style>
+    body{opacity: 0.6;animation: body 3s forwards;}
+    @keyframes body {0%{}100%{opacity: 1;}}
+    *{margin: 0;padding:0;box-sizing: border-box; }
+    .left{width:35%;height:1000px;background:url("img/背景.jpg") ;position: absolute;top:0;left:0;}
+    .zhong-left ul{position: absolute;left:50px;top:440px;width:50px;height:260px;}
+    .zhong-left li{width:50px;height:50px;list-style: none;background:url("img/小图标.png");border-radius: 2em;cursor: pointer;}
+    .zhong-left li:hover{background:url("img/彩砂.gif");}
+    #icon1{background-position:0 50px ;}
+    #icon2{background-position:50px 0 ;}
+    #icon3{background-position:150px 100px;}
+    #icon4{background-position:100px 50px ;}
+    #icon5{background-position:50px 50px ;}
+    #icon6{background:url("img/五色球.gif");background-size: 100% 100%;}
+    .right{width:65%;height:1000px;position: absolute;background:url("img/背景2.jpg") ;top:0;right:0;}
+    .zhong{width:1450px;height:750px; position: absolute;right:0;left:0;top:0;bottom:0;margin:auto;
+    background: whitesmoke;box-shadow: 0 0 70px grey;overflow: hidden;}
+    .moquan,.moquan-active{width:300px;height:300px;position: absolute;left:900px;top:100px;background:url("img/墨圈.png");background-size: 100% 100%;opacity: 0.8;}
+    .moquan-active{animation: xuanzhuan forwards 2s;}
+    .moquan img,.moquan-active img{width:200px;height:200px;margin:50px 0 0 50px;}
+    @keyframes xuanzhuan { 0%{}100%{transform: rotate(240deg);opacity: 0;} }
+    .zhong-left{height:750px;width:120px; position: absolute;left:0;}
+    .shuimoyun{height:270px;width:400px; position: absolute;left:600px;top:400px;-webkit-transition: 3s;}
+    .shuimoyun img{width:100%;height:100%;}
+    .zhong-img{width:450px;height:750px; position: absolute;left:120px;background:#B9B9B9; box-shadow:0 1px 10px rgba(0,0,0,0.5) inset;}
+    .zhong-img img, .zhong-img-active{width:400px;height:620px;position: absolute;left:20px;bottom:0;}
+    .zhong-img-active{animation: 2s tu forwards;}
+    @keyframes tu {0%{} 30%{width:420px;height:650px;}100%{width:300px;height:460px;}}
+    .zhong-text{width:760px;height:770px; position: absolute;top:800px;left:570px;overflow:scroll;opacity: 0;-webkit-transition: all 2.5s;
+        background: url("img/墨迹2.jpg") 50px 10px;
+    }
+    .xiaoshou{position:absolute; width:50px;height:40px;top:20px;right:5px;background: url("img/小手.png");background-size: 100% 100%;animation: 1s xiahua infinite;}
+    @keyframes xiahua {0%{} 100%{top:70px;}}
+    .zhong-text-content{width:750px;height:900px; position: absolute;padding: 50px 50px 50px 50px}
+    .zhong-text-content-white{width:630px;height:1850px;position: absolute;left:20px;background-color: rgba(200,200,200,0.4);z-index: 0;padding:20px 0 0 20px; }
+    .zhong-text-content td{width:200px;height:50px;color: #252323;}
+    .zhong-text-content>div{opacity: 0;-webkit-transition: all 2s;}
+    .zhong-title{width:400px;height:170px;position: absolute;left:470px;top:120px;font:50px bold;padding-left: 20px;-webkit-transition: all 2s;}
+    .zhong-right{width:120px;height:750px;position: absolute;right:0;;background:url("img/背景.jpg") ;background-position: 0 -350px;}
+    .button1,.button1-disappear{position:absolute;top:500px;left:470px;z-index:3;width:200px;height:100px;font-size:20px;cursor: pointer;
+       border-radius: 5em;  text-align: center;line-height: 100px;font-family:黑体;background: rgba(52,52,52,0.38);-webkit-transition: all 1s;}
+    .button1:hover,.button1-disappear:hover{background:#252424 ;color:grey;}
+    .button1-disappear{animation:disappear 2s forwards ;top:350px;}
+    .button1{animation: 2s forwards appear;}
+    @keyframes appear {0%{}100%{top:350px;opacity: 1;}}
+    @keyframes disappear {0%{}90%{top:100px;opacity:0;}100%{display: none;opacity:0;z-index: -1;}}
+    h2{color:#BCB582;-webkit-transition:all 1s;opacity: 0;}
+    .examples{width:600px;height:180px;border: grey 1px solid; padding: 15px 0 0 20px;position: relative;}
+.examples li{width:160px;height:120px;background: grey;list-style: none;float: left;margin-left: 20px;cursor: pointer;opacity: 0.6;-webkit-transition: all 0.5s;}
+    .examples li img{width:100%;height:100%;}
+    .examples p{width:580px;height:30px;position: absolute;bottom:0;}
+    .examples span{width:100px;margin-left:75px;height:30px;text-align: center;}
+    .examples li:hover{opacity: 1;}
+    .contant img{width:200px;height:250px;}
+    .foot{width:100%;height:20px;position: absolute;top:965px;text-align: center;font-size: 13px;color: rgba(19,19,19,0.8);}
+    .video{width:1400px;height:270px;background: grey;position: absolute;top:0;left:0;bottom:0;right:0;margin:auto;box-shadow: 0 0 70px grey;z-index: 10;display:none;
+    padding:25px 0 0 10px;
+    }
+   .video li{width:320px;height:200px;margin-left:20px;float:left;list-style: none;background: black;}
+   .video li img{width:100%;height:100%;}
+    a{color:black;}
+/*这里写的滚动条。。。*/
+    ::-webkit-scrollbar
+    {width: 15px;height: 10px }
+    ::-webkit-scrollbar-track
+    {
+        box-shadow:0 1px 3px rgba(0,0,0,0.3) inset;
+        border-radius: 10px;
+        background-color: #ddd;}
+    ::-webkit-scrollbar-thumb
+    {box-shadow:0 1px 3px rgba(0,0,0,0.3) inset;
+        border-radius: 10px;
+        background-color: #aaa;}
+    /*这里写的滚动条。。。*/
+</style>
+<script>
+window.onload=function () {
+    var oBtn=document.getElementById('button1');
+    var oTle=document.getElementById('zhong-title');
+    var oImg=document.getElementById('img1');
+    var oTxt=document.getElementById('zhong-text');
+    var sDiv=document.getElementById('shuimoyun');
+    var zDiv=document.getElementById('zhong-text-content');
+    var aH2=zDiv.getElementsByTagName('h2');
+    var aDiv=zDiv.getElementsByTagName('div')[0];
+    var mDiv=document.getElementById('moquan');
+    var xDiv=document.getElementById('xiaoshou');
+    var vDiv=document.getElementById('video');
+    var qc=document.getElementById('qcmb');
+
+    oBtn.onclick=function () {
+        oImg.className='zhong-img-active';
+        oTle.style.left=oTle.offsetLeft-350+"px";
+        oBtn.className='button1-disappear';
+        oTxt.style.opacity=1;oTxt.style.top=0;
+        sDiv.style.left=oTle.offsetLeft-350+"px";
+        mDiv.className='moquan-active';
+    }
+
+    oTxt.onscroll = function () {
+        var top = oTxt.scrollTop;
+        setInterval(function () {
+           ++top;
+        },30);
+        if (top>20) {aH2[0].style.opacity=1;aDiv.style.opacity=1;xDiv.style.opacity=0; }
+        if (top>100) {aH2[1].style.opacity=1;}
+        if (top>300) {aH2[2].style.opacity=1; }
+        if (top>500) {aH2[3].style.opacity=1; }
+        if (top>700) {aH2[4].style.opacity=1; }
+        if (top>900) {aH2[5].style.opacity=1; }
+
+
+    }
+qc.onclick=function () {
+    vDiv.style.display='block';
+}
+vDiv.onclick=function () {
+        vDiv.style.display='none';
+
+}
+}
+</script>
+<body>
+<div class="left"></div>
+<div class="right"></div>
+
+<div class="zhong">
+    <div class="video" id="video"><ul>
+        <li><img src="img/qc1.png" alt="1"></li>
+        <li><img src="img/qc2.png" alt="1"></li>
+        <li><img src="img/qc3.png" alt="1"></li>
+        <li><img src="img/qc4.png" alt="1"></li>
+    </ul></div>
+    <div class="moquan" id="moquan"><img src="img/jia.png" alt="1"></div>
+
+
+   <div class="button1" id="button1">查看我的资料卡</div>
+    <div class="zhong-left">
+        <ul>
+            <li id="icon1" title="哈啊哈"></li>
+            <li id="icon2" title="我可以做你的网上邻居吗"></li>
+            <li id="icon3"></li>
+            <li id="icon4" title="不好意思没有座机"></li>
+            <li id="icon5" title="微信号：15684135362"></li>
+            <li id="icon6"></li>
+        </ul>
+    </div>
+    <div class="shuimoyun" id="shuimoyun"><img src="img/水墨云.png" alt="1"></div>
+    <div class="zhong-img"><img src="img/me.png" alt="1" id="img1"></div>
+    <div class="zhong-text" id="zhong-text">
+        <img src="img/祥云.png" alt="1" style="height: 200px;width:400px;">
+        <div class="xiaoshou" id="xiaoshou"></div>
+        <div class="zhong-text-content" id="zhong-text-content">
+
+            <div class="zhong-text-content-white">
+<h2>关于我</h2>
+            <div>
+      <table>
+          <tr><td>姓名：徐天家</td><td>年龄：19</td></tr>
+          <tr><td>学号：2017211900</td><td>性别：男</td></tr>
+          <tr><td>专业：数字媒体技术</td><td>--</td></tr>
+          <tr><td>班级：数字1701</td><td>--</td></tr>
+
+      </table>
+            </div>
+        <br>
+        <h2>个人简介</h2>
+        <br>
+            <div>
+        <p>山东工商学院计算机科学与技术学院数字媒体技术专业大二的一名在校大学生。来自山东省滕州市，爱好音乐，kpop,
+            还有一些小创作。对前端开发有一些兴趣。
+        </p>
+            </div>
+        <br>
+
+        <h2>个人案例</h2>
+        <br>
+        <br>
+         <div class="examples">
+             <ul>
+                 <li id="qcmb"><img src="img/齐城漫步.png" alt="1"></li>
+                 <li><a href="案例/2/11.22响应式网页.html" target="_blank"><img src="img/心意生活.png" alt="1"></a></li>
+                 <li><a href="案例/3/天猫首页.html" target="_blank"><img src="img/天猫.gif" alt="1"></a></li>
+
+             </ul>
+            <p>
+                <span>网页3D漫游</span>
+                <span>仿心意生活</span>
+                <span>仿天猫首页</span>
+            </p>
+
+         </div>
+        <h2>我的文章</h2>
+        <br>
+         <div class="examples">
+
+             <a href="">《马克思课程感悟》</a><br><br>
+             <a href="">《游戏程序设计作业》</a><br><br>
+                 <a href="">《长得帅如何与人交流》</a><br><br>
+                     <a href="">《 2018年下半年英语四级笔试准考证(徐天家)》</a>
+         </div>
+        <br> <br>
+        <h2>获奖经历</h2>
+        <br>
+       <div> <p>全国数字媒体技术大赛三等奖<br></p></div>
+        <br>
+        <h2>联系我</h2>
+        <br>
+       <div><p class="contant"><img src="img/微信.JPG" alt="1">
+        <img src="img/QQ.JPG" alt="1">
+        </p></div>
+
+            <img src="img/祥云.png" alt="1" style="height: 200px;width:400px;">
+                <img src="img/黑猫.gif" alt="1">
+    </div>
+        </div>
+    </div>
+    <div class="zhong-title" id="zhong-title"><strong>My Personal Space</strong> <span style="font-size:16px;">Shiu Tiangu</span></div>
+    <div class="zhong-right"></div>
+
+</div>
+<div class="foot">©2018 我叫徐天家|我的地盘|我的制度|写点什么|网络谣言警示</div>
+</body>
+</html>
